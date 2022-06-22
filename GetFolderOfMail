@@ -1,0 +1,17 @@
+Public Sub GetFolderOfMail()
+  Dim obj As Object
+  Dim F As Outlook.MAPIFolder
+  Dim Msg$
+  Set obj = Application.ActiveWindow
+  If TypeOf obj Is Outlook.Inspector Then
+    Set obj = obj.CurrentItem
+  Else
+    Set obj = obj.Selection(1)
+  End If
+  Set F = obj.Parent
+  Msg = "The path is: " & F.FolderPath & vbCrLf
+  Msg = Msg & "Switch to the folder?"
+  If MsgBox(Msg, vbYesNo) = vbYes Then
+    Set Application.ActiveExplorer.CurrentFolder = F
+  End If
+End Sub
