@@ -9,8 +9,8 @@ Public Sub GetFolderOfMail()
     Set obj = obj.Selection(1)
   End If
   Set F = obj.Parent
-  Msg = "The path is: " & F.FolderPath & vbCrLf
-  Msg = Msg & "Switch to the folder?"
+  Msg = "De Folder path is: " & F.FolderPath & vbCrLf
+  Msg = Msg & "Open de folder?"
   If MsgBox(Msg, vbYesNo) = vbYes Then
     Set Application.ActiveExplorer.CurrentFolder = F
   End If
