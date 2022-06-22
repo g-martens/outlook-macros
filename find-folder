@@ -2,8 +2,8 @@ Private m_Folder As Outlook.MAPIFolder
 Private m_Find As String
 Private m_Wildcard As Boolean
 
-Private Const SpeedUp As Boolean = True
-Private Const StopAtFirstMatch As Boolean = True
+Private Const SpeedUp As Boolean = False
+Private Const StopAtFirstMatch As Boolean = False
 
 Public Sub FindFolder()
   Dim Name$
