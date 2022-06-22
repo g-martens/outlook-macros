@@ -13,7 +13,7 @@ Public Sub FindFolder()
   m_Find = ""
   m_Wildcard = False
 
-  Name = InputBox("Find name:", "Search folder")
+  Name = InputBox("Deel van foldernaam", "Search folder")
   If Len(Trim$(Name)) = 0 Then Exit Sub
   m_Find = Name
 
@@ -25,7 +25,7 @@ Public Sub FindFolder()
   LoopFolders Folders
 
   If Not m_Folder Is Nothing Then
-    If MsgBox("Activate folder: " & vbCrLf & m_Folder.FolderPath, vbQuestion Or vbYesNo) = vbYes Then
+    If MsgBox("Folder Openen? : " & vbCrLf & m_Folder.FolderPath, vbQuestion Or vbYesNo) = vbYes Then
       Set Application.ActiveExplorer.CurrentFolder = m_Folder
     End If
   Else
@@ -48,7 +48,7 @@ Private Sub LoopFolders(Folders As Outlook.Folders)
 
     If Found Then
       If StopAtFirstMatch = False Then
-        If MsgBox("Found: " & vbCrLf & F.FolderPath & vbCRLF & vbCrLf & "Continue?", vbQuestion Or vbYesNo) = vbYes Then
+        If MsgBox("Gevonden: " & vbCrLf & F.FolderPath & vbCrLf & vbCrLf & "Verder Zoeken?" & vbCrLf & "Dit kan even duren op de achtergrond", vbQuestion Or vbYesNo) = vbYes Then
           Found = False
         End If
       End If
